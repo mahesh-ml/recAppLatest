@@ -1,0 +1,10 @@
+org/abn/recipe/model/RecipeDTO.class
+org/abn/recipe/RecipeApplication.class
+org/abn/recipe/controller/RecipeController.class
+org/abn/recipe/entity/Recipe.class
+org/abn/recipe/util/NoSuchRecipeException.class
+org/abn/recipe/config/RecipeMapper.class
+org/abn/recipe/repo/RecipeRepository.class
+org/abn/recipe/util/RecipeControllerAdvice.class
+org/abn/recipe/service/RecipeService.class
+org/abn/recipe/config/DateConfig.class
