@@ -5,7 +5,6 @@ org/abn/recipe/controller/RecipeController.class
 org/abn/recipe/model/LoginCredentials.class
 org/abn/recipe/controller/AuthController.class
 org/abn/recipe/config/RecipeMapper.class
-org/abn/recipe/security/JwtProperties.class
 org/abn/recipe/util/RecipeControllerAdvice.class
 org/abn/recipe/repo/UserRepository.class
 org/abn/recipe/service/RecipeService.class

@@ -13,7 +13,6 @@
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/controller/AuthController.java
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/service/RecipeService.java
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/repo/UserRepository.java
-/Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/security/JwtProperties.java
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/service/RecipeUserDetailService.java
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/security/JWTFilter.java
 /Users/admin2/Documents/GitHub/recAppLatest/recipe/src/main/java/org/abn/recipe/config/DateConfig.java
