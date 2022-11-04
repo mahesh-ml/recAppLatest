@@ -16,14 +16,14 @@ import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("recipe")
+@RequestMapping("/recipe")
 public class RecipeController {
 
     @Autowired
     RecipeService recipeService;
 
     @Autowired
-    private RecipeMapper recipeMapper;
+    RecipeMapper recipeMapper;
 
     @GetMapping
     public List<RecipeDTO> findAllRecipe(){
