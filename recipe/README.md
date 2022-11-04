@@ -11,11 +11,11 @@ Run locally:
 
 This command would launch application and the database would be local h2 db.
 
-To access the recipe app 
+To access the recipe app
 
 1) first we need to create a user using below end points using postman or via curl request.
 
-**http://localhost:{PORT}/api/auth/register** 
+**http://{HOST}:{PORT}/api/auth/register** 
 
 with payload
 
@@ -34,9 +34,9 @@ on successful request we must get a response with JWT token such as below
 
 2) Using this JWT token as authorization header we can access below end points
 
-**GET** ->  http://localhost:{PORT}/recipe would list down all the available recipe.
+**GET** ->  http://{HOST}:{PORT}/recipe would list down all the available recipe.
 
-**POST** -> http://localhost:{PORT}/recipe with below sample request payload 
+**POST** -> http://{HOST}:{PORT}/recipe with below sample request payload 
 
 **{
 "vegetarian":false,
@@ -48,7 +48,7 @@ on successful request we must get a response with JWT token such as below
 "suitableFor":22
 }**
 
-**PUT** -> http://localhost:{PORT}/recipe/{recipeid} 
+**PUT** -> http://{HOST}:{PORT}/recipe/{recipeid} 
 and payload request we can update a particular recipe
 
 **{
@@ -61,7 +61,7 @@ and payload request we can update a particular recipe
         "cookingInstructions": "boil and eat"
 }**
 
-**DELETE** http://localhost:{PORT}/recipe/{recipeid}
+**DELETE** http://{HOST}:{PORT}/recipe/{recipeid}
 
 would delete a recipe with the given recipe id.
 
@@ -74,3 +74,9 @@ Please note that the auth header must contain the JWT token.
 2) use below command 
 mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=test"
 3) access api as mentioned in previous steps.
+
+
+
+**OpenAPI definition**
+
+http://{HOST}:{PORT}/swagger-ui/index.html
