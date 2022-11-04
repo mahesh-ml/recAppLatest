@@ -1,18 +1,22 @@
-# recAppLatestEnvironment :
+# recAppLatest
+
+
+
+**Environment :**
 
 
 Jdk 17 
 Maven 
 Spring boot
 Docker
-
-Run locally:
+**
+Run locally:**
 
 mvn spring-boot:run
 
 This command would launch application and the database would be local h2 db.
-
-To access the recipe app
+**
+To access the recipe app**
 
 first we need to create a user using below end points using postman or via curl request.
 http://localhost:{PORT}/api/auth/register
@@ -44,7 +48,7 @@ would delete a recipe with the given recipe id.
 
 Please note that the auth header must contain the JWT token.
 
-Running in test environment
+**Running in test environment**
 
 Please run docker-compose up & the above command would launch mysql instance as docker container.
 use below command mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=test"
