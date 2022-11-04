@@ -1,9 +1,11 @@
 # recAppLatestEnvironment :
 
+
 Jdk 17 
 Maven 
 Spring boot
 Docker
+
 Run locally:
 
 mvn spring-boot:run
