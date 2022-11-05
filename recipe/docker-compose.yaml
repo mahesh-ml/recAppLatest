@@ -3,7 +3,10 @@ version: '3'
 services:
 
   dbService:
-    image: mysql:8.0
+    image: mysql/mysql-server:8.0
+    cap_add:
+      - SYS_NICE
+
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=recipeApp
@@ -13,6 +16,8 @@ services:
       - recipe-network
     ports:
       - 3307:3306
+    volumes:
+      - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
 
   recipe-app:
     image: recipe

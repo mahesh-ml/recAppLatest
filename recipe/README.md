@@ -1,3 +1,18 @@
+**RecipeApp**
+
+This application allows to manange recipe services. 
+
+User can perform below CRUD opeartions.
+
+    create recipe
+    update an existing recipe
+    delete a recipe
+    and list all the recipe
+
+**OpenAPI definition**
+
+http://{HOST}:{PORT}/swagger-ui/index.html
+
 Environment :
 
     Jdk 17 
@@ -68,15 +83,14 @@ would delete a recipe with the given recipe id.
 Please note that the auth header must contain the JWT token.
 
 
-**Running in test environment** 
-
-1) Please run docker-compose up & the above command would launch mysql instance as docker container.
-2) use below command 
-mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=test"
-3) access api as mentioned in previous steps.
-
+**Running in test environment**
+1) mvn clean install
+2) docker build . -t recipe  .
+   alternatively  run mvn spring-boot:build-image -Dmaven.test.skip=true ( using buildpacks create docker image) 
+2) docker-compose up &
 
 
-**OpenAPI definition**
+**Prod Deployment :**
 
-http://{HOST}:{PORT}/swagger-ui/index.html
+Docker containers can be deployed in kuberneter clusture or deployed to servers using CI/CD pipelines.
+
