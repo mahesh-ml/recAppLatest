@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.abn.recipe.RecipeApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.046 s - in org.abn.recipe.RecipeApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.281 s - in org.abn.recipe.RecipeApplicationTests

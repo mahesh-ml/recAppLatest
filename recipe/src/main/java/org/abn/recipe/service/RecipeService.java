@@ -3,7 +3,9 @@ package org.abn.recipe.service;
 import lombok.extern.slf4j.Slf4j;
 import org.abn.recipe.entity.Recipe;
 import org.abn.recipe.repo.RecipeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,13 @@ import java.util.Optional;
 @Slf4j
 public class RecipeService {
     private RecipeRepository recipeRepository;
+
+    public Page<Recipe> findBySearchCriteria
+            (Specification<Recipe> spec, Pageable page){
+        Page<Recipe> searchResult = recipeRepository.findAll(spec,
+                page);
+        return searchResult;
+    }
 
 
     public RecipeService(RecipeRepository recipeRepository){
