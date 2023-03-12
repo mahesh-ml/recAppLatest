@@ -83,6 +83,20 @@ would delete a recipe with the given recipe id.
 Please note that the auth header must contain the JWT token.
 
 
+**SEARCH**  http://{HOST}:{PORT}/recipe/search
+
+{
+"searchCriteria": [
+{
+"key": "vegetarian",
+"value": "true",
+"operation": "EQUAL"
+}
+]
+
+}
+
+
 **Running in test environment**
 1) mvn clean install
 2) docker build . -t recipe  .
