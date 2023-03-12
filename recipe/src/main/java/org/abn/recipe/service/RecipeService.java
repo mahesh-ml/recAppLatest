@@ -3,6 +3,7 @@ package org.abn.recipe.service;
 import lombok.extern.slf4j.Slf4j;
 import org.abn.recipe.entity.Recipe;
 import org.abn.recipe.repo.RecipeRepository;
+import org.abn.recipe.search.RecipeSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -30,6 +31,10 @@ public class RecipeService {
 
     public List<Recipe> findAllRecipe(){
         return recipeRepository.findAll();
+    }
+
+    public List<Recipe> findAllBySpec(RecipeSpecification recipeSpecification){
+        return recipeRepository.findAll(recipeSpecification);
     }
 
     public Optional<Recipe> findByRecipeId(Long recipeId){
