@@ -89,14 +89,14 @@ Please note that the auth header must contain the JWT token.
 {
 "searchCriteria": [
 {
-"key": "vegetarian",
-"value": "true",
+"key": "suitableFor",
+"value": "1",
 "operation": "EQUAL"
 },
 {
 "key": "cookingInstructions",
 "value": "boil",
-"operation": "like"
+"operation": "LIKE"
 }
 ]
 
