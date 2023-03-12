@@ -4,10 +4,11 @@ This application allows to manange recipe services.
 
 User can perform below CRUD opeartions.
 
-    create recipe
-    update an existing recipe
-    delete a recipe
-    and list all the recipe
+    1) create recipe
+    2) update an existing recipe
+    3) delete a recipe
+    4) list all the recipe
+    5) search recipe based on different criterias
 
 **OpenAPI definition**
 
@@ -91,6 +92,11 @@ Please note that the auth header must contain the JWT token.
 "key": "vegetarian",
 "value": "true",
 "operation": "EQUAL"
+},
+{
+"key": "cookingInstructions",
+"value": "boil",
+"operation": "like"
 }
 ]
 
