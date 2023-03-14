@@ -4,6 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.abn.recipe.config.RecipeMapper;
 import org.abn.recipe.entity.Recipe;
 import org.abn.recipe.model.RecipeDTO;
+import org.abn.recipe.search.RecipeSpecification;
+import org.abn.recipe.search.SearchCriteria;
+import org.abn.recipe.search.SearchDto;
+import org.abn.recipe.search.SearchOperation;
 import org.abn.recipe.service.RecipeService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -11,14 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
@@ -109,7 +112,29 @@ public class RecipeControllerTest {
                 .andDo(print());
     }
 
+    @Test
+    void searchByCriteria_Success() throws Exception {
 
+        SearchDto searchDto = new SearchDto();
+        SearchCriteria searchCriteria = new SearchCriteria("suitableFor","1",SearchOperation.EQUAL);
+        searchDto.setSearchCriteria(Arrays.asList(searchCriteria));
+
+        List<Recipe> recipeListByCriteria = buildRecipeList();
+        when(recipeService.findBySearchCriteria(any(RecipeSpecification.class), any(Pageable.class))).thenReturn(new PageImpl<>(recipeListByCriteria));
+
+        mockMvc.perform(post("/recipe/search").contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(searchDto)))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    private List<Recipe> buildRecipeList() {
+        List<Recipe> recipeList = new ArrayList<>();
+        Recipe recipe = buildRecipe(false, Arrays.asList("chicken","fish","egg"), "cook 30 min and serve",3);
+        recipeList.add(recipe);
+        return recipeList;
+
+    }
 
     private  RecipeDTO buildRecipeDTO(Boolean vegetarian, List<String> ingredients, String cookingInstructions, Integer suitableFor) {
         RecipeDTO recipe = new RecipeDTO();
